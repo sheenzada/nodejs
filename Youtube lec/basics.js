@@ -25,7 +25,15 @@ console.log("banana");
 console.log("apple");
 
 
-for (a=0; a<=10; a++){
+// for (a=0; a<=10; a++){
+//     console.log(a);
+    
+// }
+
+var a = 0
+
+while(a<=8){
+    a++
     console.log(a);
     
 }
