@@ -43,3 +43,10 @@ for (a=0; a<users.length; a++){
     console.log(users[a]);
     
 }
+
+var user = {
+    name:'InamUllah',
+    City:'Skardu',
+    Age:18
+}
+console.log(user.Age);
