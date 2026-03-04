@@ -37,3 +37,6 @@ while(a<=8){
     console.log(a);
     
 }
+
+var users = ['inam','akash','yaseen','tajwar']
+console.log(users[3]);
