@@ -39,4 +39,7 @@ while(a<=8){
 }
 
 var users = ['inam','akash','yaseen','tajwar']
-console.log(users[3]);
+for (a=0; a<users.length; a++){
+    console.log(users[a]);
+    
+}
