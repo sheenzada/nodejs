@@ -1,0 +1,92 @@
+const express = require('express');
+const path = require('path');
+const fs = require('fs').promises;
+
+const app = express();
+const PORT = 3000;
+
+// ------------------------------
+// 1. بلٹ ان Middleware
+// ------------------------------
+// JSON ڈیٹا پارس کرنے کے لیے
+app.use(express.json());
+// URL-encoded ڈیٹا پارس کرنے کے لیے (جیسے HTML فارم)
+app.use(express.urlencoded({ extended: true }));
+// Static files serve کرنے کے لیے (public فولڈر)
+app.use(express.static(path.join(__dirname, 'public')));
+
+// ------------------------------
+// 2. کسٹم Middleware (لاگر)
+// ------------------------------
+const logger = require('./middleware/logger');
+app.use(logger);  // ہر درخواست پر یہ middleware چلے گا
+
+// ------------------------------
+// 3. روٹ-لیول Middleware کی مثال
+// ------------------------------
+// صرف مخصوص روٹس پر چلنے والا middleware
+const authenticate = (req, res, next) => {
+  const { token } = req.query;
+  if (token === 'secret123') {
+    next();  // اجازت ہے، اگلے middleware یا روٹ پر جائیں
+  } else {
+    res.status(401).send('Unauthorized: Invalid token');
+  }
+};
+
+// ------------------------------
+// 4. EJS Template Engine سیٹ اپ
+// ------------------------------
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
+// ------------------------------
+// 5. روٹس
+// ------------------------------
+
+// ہوم پیج (EJS template رینڈر کرے گا)
+app.get('/', (req, res) => {
+  const data = {
+    title: 'Home Page',
+    message: 'Welcome to Lecture 3!',
+    users: ['Ali', 'Sara', 'Ahmed']
+  };
+  res.render('index', data);  // views/index.ejs رینڈر ہو گا
+});
+
+// About page
+app.get('/about', (req, res) => {
+  res.render('about', { title: 'About Us' });
+});
+
+// پروٹیکٹڈ روٹ (middleware صرف اس روٹ پر)
+app.get('/dashboard', authenticate, (req, res) => {
+  res.send('Welcome to your dashboard!');
+});
+
+// فارم سبمٹ کرنے کا راستہ (POST)
+app.post('/submit-form', (req, res) => {
+  const { name, email } = req.body;
+  res.json({ message: 'Form submitted', data: { name, email } });
+});
+
+// ------------------------------
+// 6. Error Handling Middleware
+// ------------------------------
+// 404 handler - جب کوئی روٹ نہ ملے
+app.use((req, res, next) => {
+  res.status(404).send('Page not found');
+});
+
+// عام error handler
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Something broke!');
+});
+
+// ------------------------------
+// سرور شروع کریں
+// ------------------------------
+app.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}`);
+});
