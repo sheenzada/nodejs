@@ -1,7 +1,13 @@
-const data = require('./data');
+// const data = require('./data');
 
-console.log(data);
+// console.log(data);
 
+// import {userName} from ('./data')
+// console.log(userName);
+
+const { userName } = require('./data');
+
+console.log(userName);
 
 // const { log } = require("node:console");
 
