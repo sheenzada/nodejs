@@ -23,3 +23,9 @@ function fruits(item){
 }
 console.log("banana");
 console.log("apple");
+
+
+for (a=0; a<=10; a++){
+    console.log(a);
+    
+}
