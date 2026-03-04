@@ -1,0 +1,25 @@
+const { log } = require("node:console");
+
+var a = 100;
+let b = 20;
+const c = 50
+
+b = 100;
+a = 200;
+// c = 300;
+console.log(a+b+c);
+
+if(a==200){
+    console.log("This is if condition");
+}
+else{
+    console.log("This is else condition");
+    
+}
+
+function fruits(item){
+    console.log("this is "+item);
+    
+}
+console.log("banana");
+console.log("apple");
