@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Admission Registration Form</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800 antialiased min-h-screen py-10 px-4">
+
+    <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden">
+        
+        <!-- Header Section -->
+        <div class="bg-gradient-to-r from-blue-700 to-indigo-800 px-8 py-6 text-white">
+            <h1 class="text-3xl font-bold tracking-tight">Student Admission Form</h1>
+            <p class="text-blue-100 mt-1">Fill out the complete details to register a new student in the academy system.</p>
+        </div>
+
+        <!-- Form Element -->
+        <form id="admissionForm" class="p-8 space-y-8">
+            
+            <!-- SECTION 1: Personal Information -->
+            <div>
+                <h2 class="text-xl font-semibold text-indigo-900 border-b pb-2 mb-4">1. Student Personal Information</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">First Name <span class="text-red-500">*</span></label>
+                        <input type="text" name="firstName" required class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none transition">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Last Name <span class="text-red-500">*</span></label>
+                        <input type="text" name="lastName" required class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none transition">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Date of Birth <span class="text-red-500">*</span></label>
+                        <input type="date" name="dob" required class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none transition">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Gender</label>
+                        <select name="gender" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none transition">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Blood Group</label>
+                        <select name="bloodGroup" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none transition">
+                            <option value="">Select Blood Group</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 2: Contact Information -->
+            <div>
+                <h2 class="text-xl font-semibold text-indigo-900 border-b pb-2 mb-4">2. Contact Information</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                        <input type="email" name="email" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none transition">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                        <input type="tel" name="phone" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none transition">
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Current Address</label>
+                        <textarea name="currentAddress" rows="2" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none transition"></textarea>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Permanent Address</label>
+                        <textarea name="permanentAddress" rows="2" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none transition"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 3: Academic Details -->
+            <div>
+                <h2 class="text-xl font-semibold text-indigo-900 border-b pb-2 mb-4">3. Academic Details</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Admission Seeking for Grade <span class="text-red-500">*</span></label>
+                        <input type="text" name="gradeLevel" placeholder="e.g., Class 9, Grade 10" required class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none transition">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Previous School Name</label>
+                        <input type="text" name="previousSchool" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none transition">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Passing Year</label>
+                        <input type="number" name="passingYear" placeholder="2026" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none transition">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Total Marks (Prev. Class)</label>
+                        <input type="number" name="totalMarks" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none transition">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Obtained Marks</label>
+                        <input type="number" name="obtainedMarks" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none transition">
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 4: Guardian & Emergency Details -->
+            <div>
+                <h2 class="text-xl font-semibold text-indigo-900 border-b pb-2 mb-4">4. Parent / Guardian & Emergency Details</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Father / Guardian Name <span class="text-red-500">*</span></label>
+                        <input type="text" name="fatherName" required class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none transition">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Father Occupation</label>
+                        <input type="text" name="fatherOccupation" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none transition">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Guardian Phone <span class="text-red-500">*</span></label>
+                        <input type="tel" name="guardianPhone" required class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none transition">
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Emergency Contact Person Name</label>
+                        <input type="text" name="emergencyContactName" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none transition">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Emergency Contact Phone</label>
+                        <input type="tel" name="emergencyContactPhone" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none transition">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Button -->
+            <div class="pt-4">
+                <button type="submit" class="w-full bg-gradient-to-r from-indigo-700 to-blue-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:from-indigo-800 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-200 transform active:scale-[0.99]">
+                    Submit Registration Form
+                </button>
+            </div>
+        </form>
+
+        <!-- Message Alert Toast -->
+        <div id="responseMsg" class="hidden mx-8 mb-6 p-4 rounded-lg font-medium text-center"></div>
+    </div>
+
+    <!-- Frontend Script handling AJAX/Fetch POST call -->
+    <script>
+        document.getElementById('admissionForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(e.target);
+            const data = Object.fromEntries(formData.entries());
+            const alertBox = document.getElementById('responseMsg');
+
+            try {
+                const response = await fetch('/api/student/register', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+                
+                alertBox.classList.remove('hidden', 'bg-red-100', 'text-red-800', 'bg-green-100', 'text-green-800');
+                
+                if(result.success) {
+                    alertBox.classList.add('bg-green-100', 'text-green-800');
+                    alertBox.textContent = `${result.message} Assigned ID: ${result.registrationId}`;
+                    e.target.reset(); // clear form inputs after clean save
+                } else {
+                    alertBox.classList.add('bg-red-100', 'text-red-800');
+                    alertBox.textContent = result.message;
+                }
+            } catch (error) {
+                alertBox.classList.remove('hidden');
+                alertBox.classList.add('bg-red-100', 'text-red-800');
+                alertBox.textContent = "Error: System could not reach the server.";
+            }
+        });
+    </script>
+</body>
+</html>
